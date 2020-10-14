@@ -58,7 +58,7 @@ knitr::include_graphics("multi_group.png", auto_pdf = TRUE)
 
 ## Invariance Testing Levels
 
-Most research focus on 3 levels of measurement invariance (some authors consider there are actually more):
+Most research focus on 3 levels of measurement invariance:
 
  1. Configural Invariance (structural equivalence): the same model holds for all the groups
  
@@ -82,7 +82,7 @@ The scalar invariance model is the most constrained, with both loadings and inte
 ### Response Function
 
 
-The process by which a respondent arrives at an answer, that is the relationship between the underlying score and the respondent's final answer, is called the response function. Figure 3.3 illustrates a possible response function
+The process by which a respondent arrives at an answer, that is the relationship between the respondent's "opinion" and the final answer, is called the response function. Figure 3.3 illustrates a possible response function
 
 ```{r response, echo=FALSE, fig.cap = "Illustration of a Response Function. Source: Adapted from Wicherts & Dolan", out.width = "80%"}
 knitr::include_graphics("response_function.png", auto_pdf = TRUE)
@@ -172,7 +172,7 @@ See [@Tay2015]
 
 ***
 
-#### Aproximate Invariance: a conceptually different approach 
+#### Approximate Invariance: a conceptually different approach 
 
 It is argued that a general measurement model using a CFA applies overly restrictive assumptions
 that represent a theory-driven model [@Brown2015; @Marsh2013]. Assumptions include that each measure loads on only one factor (e.g., assuming the absence of cross-loadings and residual correlations), the absence of effects from covariates, and the assumption of an exact invariant of the measures in MGCFA.
@@ -189,13 +189,13 @@ knitr::include_graphics("approximate.png", auto_pdf = TRUE)
 Source [@Desa2018]
 
 
-Aproximate Invariance techniques:
+Approximate Invariance techniques:
 
-- Alignment invariance [@Muthen2018]
+  - Alignment invariance [@Muthen2018]
 
-- Bayesian SEM [@Lek2018]
+  - Bayesian SEM [@Lek2018]
 
-- Mixture Models [@DeRoover2019]
+  - Mixture Models [@DeRoover2019]
 
 
 

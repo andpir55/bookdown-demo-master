@@ -44,7 +44,7 @@ Survey error can be classified in two components:
 > Systematic error is caused by any factors that systematically affect measurement of the variable
 
 
-Survey group comparability problems come from systematic error or "Bias"^[systematic error and "Bias" are terms used interchangeably in the literature and they refer to deviations that are not due to chance alone ].
+Survey group comparability problems come from systematic error or "Bias"^[systematic error and "Bias" are terms used interchangeably in the literature and they refer to deviations that are not due to chance alone.].
 
 
 What is particular about comparative surveys is that there are at least two different survey statistics. Therefore, each one of these statistics is subject to different sources of error. If the overall statistics are differently affected by the error, this will cause some form of "bias" in the comparison.

@@ -8,7 +8,7 @@
 
 * Adapt the measurement testing procedure to the model you want to test
 
-* Don't just think about measurement invariance when you get the data: 
+* Don't think about measurement invariance only when you get the data: 
 
 > **Think about measurement invariance and actively include it during questionnaire design**
   
@@ -22,5 +22,5 @@
 
 * Comparing means and relationships between latent variables across countries does not have to require perfect invariance. 
 
-* Using latent variables is a more flexible approach than employing composite scores. 
+
 
