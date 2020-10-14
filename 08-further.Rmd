@@ -41,9 +41,8 @@ Without correction for measurement errors, we run the risk of giving explanation
 knitr::include_graphics("correctionmodel.jpg", auto_pdf = TRUE)
 ```
 
-![Measurement invariance testing after correction for measurement error](corrected.tiff)
 
-***
+
 
 ### Sample size & Model Characteristics
 
