@@ -2,7 +2,7 @@
 
 Cross-national and cross-cultural comparative surveys are a very important resource for the Social Sciences.  According to the [Overview of Comparative Surveys Worldwide](https://www.gesis.org/angebot/daten-analysieren/weitere-sekundaerdaten/uebersichten/overview-of-comparative-surveys-worldwide), more than 90 cross-national comparative surveys have been conducted around the world since 1948.
 
-Even though surveys can aim to fulfill different purposes, generally they aim to estimate population means, totals or distributions or to estimate relationships between variables. A comparative survey will aim to compare these levels or relationships across groups (national or otherwise).
+Even though surveys can aim to fulfill different purposes, generally they aim to estimate population means, totals or distributions or relationships between variables. A comparative survey will aim to compare these levels or relationships across groups (national or otherwise).
 
 
 ```{r bar, echo=FALSE, fig.cap = "Comparative percentages by country regarding immigration tolerance, from the European Social Survey Round 7. Source: [Dimiter Toshkov 2020](https://dimiter.eu/Visualizations_files/ESS/Visualizing_ESS_data.html#saving_the_visualization)", out.width = "80%"}
@@ -44,7 +44,7 @@ Survey error can be classified in two components:
 > Systematic error is caused by any factors that systematically affect measurement of the variable
 
 
-Survey group comparability problems come from systematic error or Bias.
+Survey group comparability problems come from systematic error or "Bias"^[systematic error and "Bias" are terms used interchangeably in the literature and they refer to deviations that are not due to chance alone ].
 
 
 What is particular about comparative surveys is that there are at least two different survey statistics. Therefore, each one of these statistics is subject to different sources of error. If the overall statistics are differently affected by the error, this will cause some form of "bias" in the comparison.

@@ -14,7 +14,7 @@ description: "Measurement Invariance Training Workshop"
 
 # Introduction {#intro}
 
-We have witnessed a surge of cross-national surveys over the past few years. Large international surveys, like the European Social Survey or the World Values Survey, provide researchers with unique opportunities to test their theories and hypothesis in diverse populations around the world. However, this availability of data is only very seldomly accompanied by the realization that the assumption of comparability of the survey instruments should not be given but tested instead. Before attributing any relevant differences between populations to substantial theoretical reasons, methodological and measurement causes should be explicitly ruled out by testing for measurement invariance. This workshop will introduce participants to the basics of measurement invariance testing with many groups. We will start by explaining what is measurement invariance and the major causes for measurement non-equivalence in surveys. Then we will proceed to discuss the three most common approaches to measurement invariance testing and end with a simple tutorial on how to test for measurement invariance with Multi-Group Confirmatory Factor Analysis (MG-CFA) using R statistical software.    
+We have witnessed a surge of cross-national surveys over the past few years. Large international surveys, like the European Social Survey or the World Values Survey, provide researchers with unique opportunities to test their theories and hypothesis in diverse populations around the world. However, this availability of data is only very seldomly accompanied by the realization that the assumption of comparability of the survey instruments should not be given but tested instead. Before attributing any relevant differences between populations to substantial theoretical reasons, methodological and measurement causes should be explicitly ruled out by testing for measurement invariance. This workshop will introduce participants to the basics of measurement invariance testing with many groups. We will start by explaining what is measurement invariance and the major causes for measurement non-equivalence in surveys. Then we will proceed to discuss the three most common approaches to measurement invariance testing and end with a simple tutorial on how to test for measurement invariance with Multi-Group Confirmatory Factor Analysis (MG-CFA) using R environment.    
 
 >This workshop is designed to be introductory and therefore I invite readers to follow the cited literature throughout this document and engage in further readings.
 
@@ -30,7 +30,9 @@ We have witnessed a surge of cross-national surveys over the past few years. Lar
  7. [Further Reading](#further)
  8. [References](#ref)
 
+## Work in Progress
 
+This document is also a work in progress. New versions with more resources and information should be completed soon. Check my website to keep up with the progress [www.andrepirralha.com](https://andrepirralha.com)
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
