@@ -1,0 +1,156 @@
+# Comparative survey research {#comp}
+
+Cross-national and cross-cultural comparative surveys are a very important resource for the Social Sciences.  According to the [Overview of Comparative Surveys Worldwide](https://www.gesis.org/angebot/daten-analysieren/weitere-sekundaerdaten/uebersichten/overview-of-comparative-surveys-worldwide), more than 90 cross-national comparative surveys have been conducted around the world since 1948.
+
+Even though surveys can aim to fulfill different purposes, generally they aim to estimate population means, totals or distributions or to estimate relationships between variables. A comparative survey will aim to compare these levels or relationships across groups (national or otherwise).
+
+
+```{r bar, echo=FALSE, fig.cap = "Comparative percentages by country regarding immigration tolerance, from the European Social Survey Round 7. Source: [Dimiter Toshkov 2020](https://dimiter.eu/Visualizations_files/ESS/Visualizing_ESS_data.html#saving_the_visualization)", out.width = "80%"}
+knitr::include_graphics("bar_graph.png", auto_pdf = TRUE)
+```
+ 
+Figure 2.1 shows a rather common application of a comparative survey. The groups, in this case European countries, are compared on their percentage shares on the answer to the question about allowing more immigrants.    
+
+However, what we see in this graph is only the final abstraction of very long process that typically surveys, and most particularly cross-national surveys, must go through. This process is sometimes called survey lifecycle and goes from design to dissemination. 
+
+```{r cycle, echo=FALSE, fig.cap = "Survey Lifecycle. Source: [Cross Cultural Survey Guidelines](https://ccsg.isr.umich.edu/chapters)", out.width = "80%"}
+knitr::include_graphics("lifecycle.png", auto_pdf = TRUE)
+```
+
+
+
+
+## Survey Error
+
+> *Survey error is any error arising from the survey process that contributed to the deviation of an estimate from its true parameter values.* [@Biemer]
+
+But regardless of how much we can try to prevent it, survey errors in one form or another will always occur. And survey errors might affect the estimates and their comparability.
+
+This applies both to when we compare data from different surveys and comparisons of sub-groups within the same survey.
+
+The comparability of survey measurements is an issue that should be thoughtfully considered before drawing substantive conclusions from comparative surveys.
+
+
+```{r trump, echo=FALSE, fig.cap = "Slighty problematic survey question. Source: [badsurveyq](https://twitter.com/badsurveyq)", out.width = "80%"}
+knitr::include_graphics("trump_pence.jpg", auto_pdf = TRUE)
+```
+
+
+Survey error can be classified in two components: 
+
+
+> Random error is caused by any factors that randomly affect measurement of the variable 
+
+> Systematic error is caused by any factors that systematically affect measurement of the variable
+
+
+Survey group comparability problems come from systematic error or Bias.
+
+
+What is particular about comparative surveys is that there are at least two different survey statistics. Therefore, each one of these statistics is subject to different sources of error. If the overall statistics are differently affected by the error, this will cause some form of "bias" in the comparison.
+
+> In other words, besides substantive differences between survey statistics, there might be systematic differences caused by survey error.
+
+
+
+## Total Survey Error framework
+
+
+> Total survey error is the accumulation of all errors that may arise in the design, collection, processing and analysis of survey data.
+
+The Total Survey Error offers an elegant framework to describe survey errors and the several sources of error that are rooted within the survey lifecycle.  
+
+```{r ext, echo=FALSE, fig.cap = "Source: @Groves2010", out.width = "80%"}
+knitr::include_graphics("total_survey_error.png", auto_pdf = TRUE)
+```
+
+As it can be seen in figure 2.4, there is a "representation" and a "measurement" side. 
+
+Systematic representation errors include:
+  
+* coverage error
+* sampling error
+* nonresponse
+  
+Systematic error in measurement include:
+  
+* validity
+* processing
+* measurement error
+
+
+Measurement error includes: response error, interviewer-induced response effects, social desirability, methods effects, response styles.
+
+> Here we will focus on the Measurement side
+
+
+
+
+## The "Bias" framework
+
+The TSE error classification is analogous to the **"Bias"** framework in the field of cross-cultural psychology. Under this framework, @VandeVijver1997 distinguished between “construct”, “item”, and “method” bias which are essencially similar to the TSE's validity, measurement error and all the remaining errors. 
+
+
+> The bias framework is developed from the perspective of cross-cultural psychology and attempts to provide a comprehensive taxonomy of all systematic sources of error that can challenge the inferences drawn from cross-cultural studies [@VandeVijver1997; @VandeVijver2000; @VandeVijver1997a; @VandeVijver2004]. 
+
+
+### Construct Bias
+
+Construct bias is present if the underlying construct measured is not the same across cultures.
+
+- It can occur if a construct is differently defined or only has a partial overlap across cultural groups.
+
+Example: 
+
+> Varying definitions of happiness in Western and East Asian cultures [@Uchida2004]. In Western cultures, happiness tends to be defined in terms of individual achievement, whereas in East Asian cultures happiness is defined in terms of interpersonal connectedness.
+
+
+
+### Method Bias
+
+- Sample Bias: is the incomparability of samples due to cross-cultural variations in characteristics, such as different educational levels, students versus the general population, and urban versus rural residents 
+
+- Instrument bias: involves systematic errors derived from instrument characteristics such as self-report bias in Likert-type scale measures. The systematic tendency of respondents to endorse certain response options on some basis other than the target construct (i.e., response styles) may affect the validity of cross- cultural comparisons [@VanHerk2004].  
+
+- Administration Bias: stems from administration conditions (e.g., data collection modes, group versus individual assessment), ambiguous instructions, interaction between administrators and respondents (e.g., halo effects), and communication problems (e.g., language differences, taboo topic).
+
+
+
+### Item Bias
+
+- Occurs when an item has a different meaning across cultures. An item of a scale is biased if persons with the same target trait level, but coming from different cultures, are not equally likely to endorse the item (@VandeVijver1997; @VandeVijver2013). 
+
+- Item bias can arise from poor translation, inapplicability of item contents in different cultures, or from items that trigger additional traits or have words with ambiguous connotations.
+
+
+
+## Preventing survey comparability problems
+
+Following the TSE framework, the best way to reduce eventual comparability issues in survey data is to reduce the survey error to the very minimum and assuring that the persistent errors are most likely similar across the groups.
+
+There is a vast literature discussing how to reduce TSE. However, two issues are particularly relevant to cross-cultural/national surveys.
+
+### Translation
+  
+TRAPD - Translation, Review, Adjudication, Pretesting, and Documentation
+
+This method was proposed by @Harkness2003
+
+Team approach to survey translation:  
+
+> - **T**ranslators produce, independently from each other, initial translations 
+
+> - **R**eviewers review translations with the translators
+
+> - **A**djudicator (one or more) decides whether the translation is ready
+
+> - **P**retesting is the next step before going out to the field
+
+> - **D**ocumentation should be constant during the entire process
+
+### Question coding system: SQP
+
+It offers an additional way to check question comparability by taking into account the different characteristics of the questions in the original and adapted versions.
+
+> https://sqp.upf.edu/
+

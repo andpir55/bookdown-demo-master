@@ -1,0 +1,53 @@
+# Checklist for Measurement Invariance with MGCFA {#check}
+
+In this section we describe the necessary steps for invariance testing.
+
+## Start by having a model
+
+* Any statistical model is only as good as the theory it is built on.
+
+* Run CFA in each group to detect any large deviations.
+
+## Test the configural model
+
+* Run a MGCFA without cross group equality constraints
+
+* The model should show a good fit.
+
+> There are two approaches of model identification: marker indicator or reference group
+[(see Little et al., 2006)](https://www.tandfonline.com/doi/abs/10.1207/s15328007sem1301_3)
+
+## Test the metric model
+
+* Fix the factor loadings to be equal across groups
+
+* Compare the model fit to the configural model
+
+## Test the scalar model
+
+* In addition to the factor loadings, constrained the intercepts to be equal across groups
+
+* Compare the model fit to the metric model
+
+
+## Got noninvariance? It happens often.
+
+
+
+Several options:
+		
+		- exclude groups
+		
+		- remove items
+	
+		- distinguish several subgroups of countries
+
+Still not getting invariance? 
+
+> Conclude that the construct has different meaning across groups
+
+Consider alternative invariance testing procedures.
+
+
+
+

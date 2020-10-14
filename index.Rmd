@@ -1,0 +1,40 @@
+--- 
+title: "Testing for Measurement Invariance with Many Groups"
+author: "[André Pirralha](https://www.andrepirralha.com)"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: andpir55/Invariance_tutorial
+description: "Measurement Invariance Training Workshop"
+---
+
+# Introduction {#intro}
+
+We have witnessed a surge of cross-national surveys over the past few years. Large international surveys, like the European Social Survey or the World Values Survey, provide researchers with unique opportunities to test their theories and hypothesis in diverse populations around the world. However, this availability of data is only very seldomly accompanied by the realization that the assumption of comparability of the survey instruments should not be given but tested instead. Before attributing any relevant differences between populations to substantial theoretical reasons, methodological and measurement causes should be explicitly ruled out by testing for measurement invariance. This workshop will introduce participants to the basics of measurement invariance testing with many groups. We will start by explaining what is measurement invariance and the major causes for measurement non-equivalence in surveys. Then we will proceed to discuss the three most common approaches to measurement invariance testing and end with a simple tutorial on how to test for measurement invariance with Multi-Group Confirmatory Factor Analysis (MG-CFA) using R statistical software.    
+
+>This workshop is designed to be introductory and therefore I invite readers to follow the cited literature throughout this document and engage in further readings.
+
+
+**Workshop Content**
+
+ 1. [Introduction](#intro)  
+ 2. [Comparative Survey Research](#comp)
+ 3. [Measurement Invariance](#invariance)
+ 4. [Checklist for Measurement Invariance with MG-CFA](#check)
+ 5. [Testing for measurement invariance with lavaan in R](#lavaan)
+ 6. [Take-Home Message](#home)
+ 7. [Further Reading](#further)
+ 8. [References](#ref)
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

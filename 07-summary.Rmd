@@ -1,0 +1,26 @@
+# Take-Home Message {#home}
+
+
+
+* Measurement invariance is important
+
+* Comparisons based on single questions without knowledge of the equivalence can be questioned
+
+* Adapt the measurement testing procedure to the model you want to test
+
+* Don't just think about measurement invariance when you get the data: 
+
+> **Think about measurement invariance and actively include it during questionnaire design**
+  
+* Remember MGCFA needs at least 3 indicators per latent variable to test for it.
+  
+* Compare distributions and look for substantial deviations of the equality constraints over groups for slopes (factor loadings) and intercepts
+
+* Equivalent loadings (metric invariance) necessary for correlations, regressions 
+
+* Equivalent intercepts (scalar invariance) necessary for comparing latent means 
+
+* Comparing means and relationships between latent variables across countries does not have to require perfect invariance. 
+
+* Using latent variables is a more flexible approach than employing composite scores. 
+

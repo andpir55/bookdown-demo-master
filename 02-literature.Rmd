@@ -1,0 +1,203 @@
+# Measurement Invariance {#invariance}
+
+Measurement invariance addresses some of the statistical implications of the TSE and "Bias" frameworks and defines conditions that have to be fulfilled before inferences can be drawn about comparative conclusions dealing with constructs or scores in cross-national/cultural studies.
+
+- Comparisons can only be made if the people in the different countries/cultures react similarly to the questions asked. 
+
+- The measures should be “functionally equivalent” and the response models should be invariant across countries
+
+## What it Measurement Invariance?
+
+Formal definition of invariance: 
+
+> “whether or not, under different conditions of observing and studying phenomena, measurement operations yield measures of the same attribute” [@Horn1992, p. 117].
+
+
+What implies?
+
+> Measurement invariance implies that using the same questionnaire in different groups (such as countries or at various points in time, or under different conditions) does measure the same construct in the same way [@Chen2008; @Davidov2014; @Horn1992; @Millsap2011]. 
+
+
+## How to test for it?
+
+The most common method to test measurement invariance is Multi-Group Confirmatory Factor Analysis (MGCFA). 
+
+### Confirmatory Factor Analysis 
+
+CFA focuses on modeling the relationship between manifest (i.e., observed) indicators and underlying latent variables (factors). CFA is a special case of structural equation modeling (SEM) in which relationships among latent variables are modeled as covariances/correlations rather than as structural relationships (i.e., regressions). CFA can also be distinguished from exploratory factor analysis (EFA) in that CFA requires researchers to explicitly specify all characteristics of the hypothesized measurement model (e.g., the number of factors, pattern of indicator- factor relationships) to be examined whereas EFA is more data-driven. 
+
+
+```{r cfa, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("confactor.png", auto_pdf = TRUE)
+```
+
+
+For more information about confirmatory factor analysis see @Brown2015.
+
+
+### Multi-Group Confirmatory Factor Analysis -  MGCFA
+
+- With a single model tests whether a theoretical model fits several groups simultaneously
+
+- How? Because we constrain parameters to be equal across groups
+
+- MGCFA invariance testing model in practice is testing an hypothesis of whether a given theoretical model fits well to the data across the groups.
+
+- Depending on what parameters we constraint to be equal across groups, we test one or another level of invariance
+
+
+
+```{r mgcfa, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("multi_group.png", auto_pdf = TRUE)
+```
+
+
+
+
+
+
+## Invariance Testing Levels
+
+Most research focus on 3 levels of measurement invariance (some authors consider there are actually more):
+
+ 1. Configural Invariance (structural equivalence): the same model holds for all the groups
+ 
+ 2.  Metric Invariance (measurement unit equivalence): factor loadings (slopes) are the same across the groups
+  
+  > Implication: The scale intervals are the same across groups because the loadings are the same in each group. When checked, allows comparing unstandardized regression coefﬁcients and/or covariances across groups.
+
+3. Scalar Invariance (Full score equivalence): the intercepts are the same across all countries being compared.
+
+ > Implication: Latent means can be compared across groups meaningfully.
+
+Following a bottom-up approach, each level is tested by setting cross-group constraints on parameters (loadings and intercepts) and comparing hierarchically more constrained models with less constrained ones. 
+
+At the configural level, loadings and intercepts are freely estimated.
+
+At the metric level, loadings are constrained to be equal across groups and the intercepts are freely estimated.
+
+The scalar invariance model is the most constrained, with both loadings and intercepts constrained to be equal across groups.
+
+
+### Response Function
+
+
+The process by which a respondent arrives at an answer, that is the relationship between the underlying score and the respondent's final answer, is called the response function. Figure 3.3 illustrates a possible response function
+
+```{r response, echo=FALSE, fig.cap = "Illustration of a Response Function. Source: Adapted from Wicherts & Dolan", out.width = "80%"}
+knitr::include_graphics("response_function.png", auto_pdf = TRUE)
+```
+
+The *X* axis represents the latent variable mean; the *Y* axis represents the response to a survey question item measuring the latent variable. The diagonal represents the functional relation between the latent variable and the (unstandardized) response to the survey question item in group G1.
+
+> Another way to thing about invariance testing is as a procedure to check whether the response functions across different groups are similar and can therefore be compared.
+
+
+
+
+#### Example
+
+Let's imagine we have two groups. These groups are respondents answering the same survey questions in two different countries: Group 1 and Group 2.
+
+```{r non, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("Picture2.png", auto_pdf = TRUE)
+```
+
+Figure 3.4 describes a configural invariance scenario. Both the factor loadings and intercepts are different across the groups, as is made clear by the different slopes and Y axis intersections for G1 and G2. Therefore, metric and scalar invariance do not hold in these groups and shouldn't be compared.  
+
+
+
+```{r metric, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("Picture1.png", auto_pdf = TRUE)
+```
+
+Figure 3.5 describes metric invariance and scalar **non**invariance. The slopes are identical and therefore we can assume the factor loadings are the same across the groups.   
+
+
+
+```{r metandscalar, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("metric_scalar.png", auto_pdf = TRUE)
+```
+
+
+Finally, figure 3.6 shows that the loadings are the same across the groups (similar slopes) and that the intercepts are approximately also the same. 
+
+
+## How to handle Noninvariance
+
+It is not uncommon to have noninvariance across groups. The literature shows several examples of scales that fail to be comparable across groups. Some examples:
+
+ > @Aleman2016 and @SOKOLOV2018 recently showed that the Inglehart value scales are not comparable across all countries (but see @Welzel2016); @Ariely2011 found that public support for democracy cannot be compared across countries in the World Value Survey (WVS); @Lomazzi2017 demonstrated that gender-role attitudes are not comparable across all WVS countries; @Davidov2008 showed that means of human values in the ESS may not be compared across all countries; @Rudnev2018 found that the means of Seeman’s alienation scale are not comparable cross-nationally.
+
+Several theoretical and more technical procedures have been discussed to overcome a potential noninvariant result.
+
+Figure 3.7 compiles a great part of this discussion and can be used as a decision tree when necessary.
+
+
+```{r tree, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("decision_tree.png", auto_pdf = TRUE)
+```
+
+
+
+
+### Partial Invariance Testing
+
+
+Some authors consider that partial invariance is enough of a requisite for comparisons across groups to be made [@Byrne1989a; @Steenkamp1998].
+
+
+Partial invariance is established when the parameters of at least two indicators are equal across groups. 
+
+This means to identify those items that are very different across groups and release them while making sure that at least two items per latent concept have equal loadings and intercepts. 
+
+While this approach has been frequently used, there are also some critics that see it as not enough to assure meaningful comparisons [@DeBeuckelaer2011; @Steinmetz2018EstimationAC].
+
+
+### Alternative Measurement Invariance Testing procedures 
+
+#### Exact Invariance testing alternative approaches to MGCFA
+
+Multi-indicator Multiple Cause (MIMIC)
+
+- MIMIC model permits both categorical and continuous individual difference variables (e.g., sex and age) but permits only a subset of the model parameters to vary as a function of these characteristic
+
+See [@Kim2012]
+
+Item Response Theory (IRT) Differential Item Functioning
+
+- Aimed to categorical data
+
+See [@Tay2015]
+
+***
+
+#### Aproximate Invariance: a conceptually different approach 
+
+It is argued that a general measurement model using a CFA applies overly restrictive assumptions
+that represent a theory-driven model [@Brown2015; @Marsh2013]. Assumptions include that each measure loads on only one factor (e.g., assuming the absence of cross-loadings and residual correlations), the absence of effects from covariates, and the assumption of an exact invariant of the measures in MGCFA.
+
+- In analysis of cross-national data, equality constraints tend to lead to the rejection of the tested model and often produce poor model fit statistics. Increasing the methodological sophistication and availability of statistical tools provide ways of quantifying uncertainty in the hypothesis through the estimation of possible values in the population rather than depending on only a single value for many populations.
+
+
+
+```{r approximate, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+knitr::include_graphics("approximate.png", auto_pdf = TRUE)
+```
+
+
+Source [@Desa2018]
+
+
+Aproximate Invariance techniques:
+
+- Alignment invariance [@Muthen2018]
+
+- Bayesian SEM [@Lek2018]
+
+- Mixture Models [@DeRoover2019]
+
+
+
+
+
