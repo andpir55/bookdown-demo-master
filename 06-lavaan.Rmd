@@ -15,9 +15,9 @@ Alternatives:
 - [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - [R](https://cran.r-project.org)
 
-## Install Lavaan and SemTools
+## Install lavaan and semTools
 
-- [Lavaan](https://cran.r-project.org/web/packages/lavaan/index.html)
+- [lavaan](https://cran.r-project.org/web/packages/lavaan/index.html)
 - [semTools](https://cran.r-project.org/web/packages/semTools/index.html)
 
 
@@ -35,51 +35,236 @@ In a nutshell:
 
 Factor loadings in R are indicated by =∼ and covariances (between factors or error terms for items) are indicated by ∼∼. The model is specified similar to writing regression equations.
 
-### Example
+### Example: Testing the Political Trust for measurement invariance
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
+library(DiagrammeR)
 
-
-## Useful shortcut: measurement invariance omnibus testing
+grViz("
+      digraph boxes_and_circles {
+      
+      # a 'graph' statement
+      graph [overlap = false, fontsize = 10]
+      
+      # several 'node' statements
+      node [shape = circle,
+      fontname = Helvetica];
+      
+      node [shape = circle,
+      fixedsize = true,
+      width = 1, ] // sets as circles
+      A;
+      A [label = 'Political 
+Trust']
+      
+      node [shape = box,
+      fixedsize = true,
+      width = 0.8] // sets as circles
+      1;2;3;4;
+      1 [label = 'Parliment', fontsize = 10]
+      2 [label = 'Politicians', fontsize = 10]
+      3 [label = 'Legal 
+System', fontsize = 10]
+      4 [label = 'Political 
+Parties', fontsize = 10]
+      
+      
+      
+      node [shape = circle,
+      fixedsize = true,
+      width = 0.3] 
+      E1;E2;E3;E4; 
+      E1[label = 'e1', fontsize = 10]
+      E2[label = 'e2', fontsize = 10]
+      E3[label = 'e3', fontsize = 10]
+      E4[label = 'e4', fontsize = 10]
+     
+      
+      # several 'edge' statements
+      edge[splines=none]      
+      A->1 [label = '1']
+      A->2
+      A->3
+      A->4
+      1->E1[dir=back]
+      2->E2[dir=back]
+      3->E3[dir=back]
+      4->E4[dir=back]
+      
+      
+      }"
+)
 
 ```
-measurementInvariance(HS.model, 
-                      data = HolzingerSwineford1939, 
-                      group = "school")
+
+
+We want to know if we can compare the political trust concept in Portugal and Spain.
+
+### Load lavaan and semTools
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(foreign)
+library(tidyverse)
+
+ESS8<- read.dta("~/Documents/R exercises/bookdown-demo-master/ESS8e02_1.dta")
+
+
+#ESS8%>%
+ # group_by(cntry)%>%
+  #tally()
+
+#ESS8%>%
+ # distinct(cntry)
+
+
+poltrust <- select(ESS8, cntry, trstprl, trstlgl, trstplt, trstprt)
+
+poltrust$trstprl = as.numeric(as.character(poltrust$trstprl))
+poltrust$trstlgl = as.numeric(as.character(poltrust$trstlgl))
+poltrust$trstplt = as.numeric(as.character(poltrust$trstplt))
+poltrust$trstprt = as.numeric(as.character(poltrust$trstprt))
+
+
+
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+mea_inv<-poltrust%>%
+  filter(cntry == "PT"| cntry == "ES")
+
 ```
 
 
-```
-Measurement invariance models:
+```{r, echo =TRUE, warning=FALSE, message=FALSE}
 
-Model 1 : fit.configural
-Model 2 : fit.loadings
-Model 3 : fit.intercepts
-Model 4 : fit.means
-
-Chi Square Difference Test
-
-               Df    AIC    BIC  Chisq Chisq diff Df diff Pr(>Chisq)    
-fit.configural 48 7484.4 7706.8 115.85                                  
-fit.loadings   54 7480.6 7680.8 124.04      8.192       6     0.2244    
-fit.intercepts 60 7508.6 7686.6 164.10     40.059       6  4.435e-07 ***
-fit.means      63 7543.1 7710.0 204.61     40.502       3  8.338e-09 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-
-Fit measures:
-
-                 cfi rmsea cfi.delta rmsea.delta
-fit.configural 0.923 0.097        NA          NA
-fit.loadings   0.921 0.093     0.002       0.004
-fit.intercepts 0.882 0.107     0.038       0.015
-fit.means      0.840 0.122     0.042       0.015
+library(lavaan)
+library(semTools)
 
 ```
+
+
+### Model Building
+
+Let´s build our model using [lavaan model syntax](https://lavaan.ugent.be/tutorial/syntax1.html)
+
+```{r, echo =TRUE}
+
+baseline <- 'political_trust =~ trstprl + trstlgl + trstplt + trstprt
+'
+
+
+#CFA function
+fit_baseline<-cfa(baseline, data = mea_inv, group="cntry")
+
+
+#Summary shows the estimation results
+summary(fit_baseline, fit.measures=T, standardized = T)
+
+```
+
+
+### Testing
+
+Not a good model. 
+
+Commonly reported fit indices and recommended cut-offs
+
+| Measure |    Name      | Cut-off   |   
+|:--------------------|--------------------:|----------------:|
+|  CFI         |Comparative Fit Index | CFI>=.90|
+|  RMSEA       |Root Mean Square Root of Approximation |RMSEA<0.08|
+|  SRMR         |Standardized Root Mean Square Residual|SRMR<0.08|
+
+Please take this as generally indicative. Read more about testing on [Further Readings](#test) 
+
+### Changing the original model
+
+```{r, echo =TRUE, warning=FALSE, message=FALSE}
+
+baseline1 <- 'political_trust =~ trstprl + trstlgl + trstplt + trstprt
+trstplt ~~ trstprt
+'
+
+fit_configural<-cfa(baseline1, data = mea_inv, group="cntry")
+
+summary(fit_configural, fit.measures=T, standardized = T)
+
+```
+
+Much better model. Configural Invariance set. Let's go for metric.
+
+
+### Metric Invariance
+```{r, echo =TRUE, warning=FALSE, message=FALSE}
+
+metric <- 'political_trust =~ trstprl + trstlgl + trstplt + trstprt
+trstplt ~~ trstprt
+'
+
+fit_metric<-cfa(baseline1, data = mea_inv, group="cntry", group.equal = c("loadings"))
+
+summary(fit_metric, fit.measures=T, standardized = T)
+
+```
+
+Also a good model. Let's go ahead for scalar.
+
+
+
+### Scalar Invariance
+
+```{r, echo =TRUE, warning=FALSE, message=FALSE}
+
+scalar <- 'political_trust =~ trstprl + trstlgl + trstplt + trstprt
+trstplt ~~ trstprt
+'
+
+fit_scalar<-cfa(baseline1, data = mea_inv, group="cntry", group.equal = c("loadings", "intercepts"))
+
+summary(fit_scalar, fit.measures=T, standardized = T)
+
+```
+
+Scalar Invariance holds!
+
+### Comparing several models using compareFit
+
+```{r, echo = TRUE, warning=FALSE, message=FALSE}
+
+compareFit(fit_configural, fit_metric, fit_scalar)
+
+```
+
+
+
+## Omnibus invariance testing
+
+```{r, echo = TRUE, warning=FALSE, message=FALSE}
+
+
+measurementInvariance (model = baseline1, data = mea_inv, group = "cntry")
+
+
+```
+
+
 
 Terry Jorgensen [measurementInvariance function](https://www.rdocumentation.org/packages/semTools/versions/0.4-14/topics/measurementInvariance), within the semTools package is very handy
 
 
 
 ## Advanced Tutorial: Partial Invariance (individually constraining parameters)
+
+```{r under, echo=FALSE, fig.cap = "Source: Designed by starline / Freepik", out.width = "80%"}
+knitr::include_graphics("25509.jpg", auto_pdf = TRUE)
+```
+
+
+
+
+
+

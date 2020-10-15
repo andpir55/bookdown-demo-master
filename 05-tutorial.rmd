@@ -46,8 +46,7 @@ Still not getting invariance?
 
 > Conclude that the construct has different meaning across groups
 
-Consider alternative invariance testing procedures.
-
+Alternatively, consider the decision tree presented in Figure \@ref(fig:tree).
 
 
 

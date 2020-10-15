@@ -27,7 +27,7 @@ The most common method to test measurement invariance is Multi-Group Confirmator
 CFA focuses on modeling the relationship between manifest (i.e., observed) indicators and underlying latent variables (factors). CFA is a special case of structural equation modeling (SEM) in which relationships among latent variables are modeled as covariances/correlations rather than as structural relationships (i.e., regressions). CFA can also be distinguished from exploratory factor analysis (EFA) in that CFA requires researchers to explicitly specify all characteristics of the hypothesized measurement model (e.g., the number of factors, pattern of indicator- factor relationships) to be examined whereas EFA is more data-driven. 
 
 
-```{r cfa, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+```{r cfa, echo=FALSE, fig.cap = "Source: @Fischer2019", out.width = "80%"}
 knitr::include_graphics("confactor.png", auto_pdf = TRUE)
 ```
 
@@ -47,7 +47,7 @@ For more information about confirmatory factor analysis see @Brown2015.
 
 
 
-```{r mgcfa, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+```{r mgcfa, echo=FALSE, fig.cap = "Multi-Group Confirmatory Factor Analysis Model", out.width = "80%"}
 knitr::include_graphics("multi_group.png", auto_pdf = TRUE)
 ```
 
@@ -134,7 +134,7 @@ Several theoretical and more technical procedures have been discussed to overcom
 Figure 3.7 compiles a great part of this discussion and can be used as a decision tree when necessary.
 
 
-```{r tree, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+```{r tree, echo=FALSE, fig.cap = "Source: @Cieciuch2019", out.width = "80%"}
 knitr::include_graphics("decision_tree.png", auto_pdf = TRUE)
 ```
 
@@ -181,12 +181,10 @@ that represent a theory-driven model [@Brown2015; @Marsh2013]. Assumptions inclu
 
 
 
-```{r approximate, echo=FALSE, fig.cap = "Source: Wicherts & Dolan, 2010", out.width = "80%"}
+```{r approximate, echo=FALSE, fig.cap = "Source: @Desa2018", out.width = "80%"}
 knitr::include_graphics("approximate.png", auto_pdf = TRUE)
 ```
 
-
-Source [@Desa2018]
 
 
 Approximate Invariance techniques:

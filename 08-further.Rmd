@@ -3,7 +3,7 @@
 
 ## Critical Issues of MGCFA Measurement invariance
 
-### Model testing
+### Model testing {#test}
 
 Quality of the model is the similarity of estimated parameters to the true population parameters (assuming the model is correct). However, cannot really observe this directly
 
@@ -16,6 +16,8 @@ Two testing approaches
 >(...) a number of alternative fit measures have been proposed (even though most of them still are derived from the chi-square statistic). Here, we focus on the most commonly reported fit statistics (Hu and Bentler, 1999), which can be differentiated into (a) incremental or comparative and (b) lack-of-fit indices. Incremental or comparative fit models compare the fit of the theoretical model against an alternative model. This is (typically) an independence model in which no relationships between variables are expected. Higher values are indicating better fit with values above 0.95 indicating good fit (Hu and Bentler, 1998). The Tucker–Lewis Index (TLI) or non-normed fit index (NNFI) and the comparative fit index (CFI; Bentler, 1990) are the most commonly reported and more robust indicators (Hu and Bentler, 1999). Lack of fit indices in contrast indicate better fit, if the value is lower. The standardized root mean square residual (SRMR; Bollen, 1989) compares the discrepancy between the observed correlation matrix and the implied theoretical matrix. Smaller values indicate that there is less deviation. Hu and Bentler (1998) suggested that values less than 0.08 are acceptable. The root mean square error of approximation (RMSEA; Browne and Cudeck, 1992) uses a similar logic, but also takes into account model complexity and rewards more parsimonious models. Historically, values ranging between 0.06 and 0.08 were deemed acceptable, but simulations by Hu and Bentler (1998, 1999) suggested that a cut-off of 0.06 might be more appropriate. [@Fischer2019]
   
 Most commonly used: chi-square, CFI, TLI, RMSEA, SRMR (all available upon request in lavaan). 
+
+See [David Kenny's website](http://www.davidakenny.net/cm/fit.htm) for a detailed explanation of each fit indice.
   
   2. Local Fit indices: @Saris2009 argue that global fit measures are never sufficient and that researchers should test the local fit of their models, that is, they should look at the parameter level and test if each of the parameters in the model is or not misspecified. Local fit testing tells whether there are misspecifications in the model using the modification indices (an estimate of the amount by which the χ2 would be reduced if a single parameter restriction was to be removed from the model), the power of the test (which is the complement of type II error, i.e., of wrongly failing to reject the null hypothesis), and when necessary the expected parameter changes (an approximation to the value of the parameter if it was not constrained).
   
@@ -61,4 +63,4 @@ knitr::include_graphics("correctionmodel.jpg", auto_pdf = TRUE)
   - [van de Schoot, Lugtig & Hox, 2012](https://www.tandfonline.com/doi/abs/10.1080/17405629.2012.686740)
   - [Fischer & Karl, 2019](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01507/full)
   - [Lavaan Measurement Invariance tutorial](https://lavaan.ugent.be/tutorial/groups.html)
-  - Maksim Rudnev's [Alignment Invariance testing tutorial](https://maksimrudnev.com/2019/05/01/alignment-tutorial/)
+  - [Maksim Rudnev's Alignment Invariance testing tutorial](https://maksimrudnev.com/2019/05/01/alignment-tutorial/)
