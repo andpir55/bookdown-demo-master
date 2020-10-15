@@ -6,7 +6,7 @@ Measurement invariance addresses some of the statistical implications of the TSE
 
 - The measures should be “functionally equivalent” and the response models should be invariant across countries
 
-## What it Measurement Invariance?
+## What is Measurement Invariance?
 
 Formal definition of invariance: 
 
@@ -18,7 +18,7 @@ What implies?
 > Measurement invariance implies that using the same questionnaire in different groups (such as countries or at various points in time, or under different conditions) does measure the same construct in the same way [@Chen2008; @Davidov2014; @Horn1992; @Millsap2011]. 
 
 
-## How to test for it?
+## How to test for measurement invariance?
 
 The most common method to test measurement invariance is Multi-Group Confirmatory Factor Analysis (MGCFA). 
 

@@ -41,46 +41,6 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -120,7 +80,7 @@
 
 \title{Testing for Measurement Invariance with Many Groups}
 \author{\href{https://www.andrepirralha.com}{André Pirralha}}
-\date{2020-10-12}
+\date{2020-10-15}
 
 \begin{document}
 \maketitle
@@ -129,99 +89,135 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{preface}{%
-\chapter{Preface}\label{preface}}
-
-We have witnessed a surge of cross-national surveys over the past few years. Large international surveys, like the European Social Survey or the World Values Survey, provide researchers with unique opportunities to test their theories and hypothesis in diverse populations around the world. However, this availability of data is only very seldomly accompanied by the realization that the assumption of comparability of the survey instruments should not be given but tested instead. Before attributing any relevant differences between populations to substantial theoretical reasons, methodological and measurement causes should be explicitly ruled out by testing for measurement invariance. This workshop will introduce participants to the basics of measurement invariance testing with many groups. We will start by explaining what is measurement invariance and the major causes for measurement non-equivalence in surveys. Then we will proceed to discuss the three most common approaches to measurement invariance testing and end with a simple tutorial on how to test for measurement invariance with Multi-Group Confirmatory Factor Analysis (MG-CFA) using R statistical software.
-
-\begin{quote}
-This workshop is designed to be introductory and therefore I invite the readers to follow the cited literature throughout this document and engage in further readings.
-\end{quote}
-
-Content
-
-\begin{itemize}
-\tightlist
-\item
-  Introduction\\
-\item
-  The basic principles of measurement invariance testing
-\item
-  The main causes of non-invariance
-\item
-  The importance of measurement invariance testing in cross-national surveys
-\item
-  Three most common approaches to measurement invariance testing
-\item
-  Tutorial on MG-CFA two groups measurement invariance testing procedure in R
-\item
-  Q \& A
-\end{itemize}
-
 \hypertarget{intro}{%
 \chapter{Introduction}\label{intro}}
 
-Cross-national and cross-cultural comparative surveys have risen to be a very important resource in the Social Sciences. According to the \href{https://www.gesis.org/angebot/daten-analysieren/weitere-sekundaerdaten/uebersichten/overview-of-comparative-surveys-worldwide}{Overview of Comparative Surveys Worldwide}, more than 90 cross-national comparative surveys have been conducted around the world since 1948.
-
-Even though surveys can aim to fulfill different purposes, generally they aim to estimate population means, totals or distributions or to estimate relationships between variables. A comparative survey will aim to compare these levels or relationships across groups (national or otherwise).
-
-But regardless of how much we can try to prevent it, survey errors in one form or another will always occur. Survey errors might affect the estimates and their comparability.
-
-This applies to different surveys but also to comparisons of sub-groups within the same survey.
-
-Here we look at the comparability issue of survey data under the Total Survey Error perspective.
-
-\hypertarget{comparative-survey-research}{%
-\section{Comparative survey research}\label{comparative-survey-research}}
+We have witnessed a surge of cross-national surveys over the past few years. Large international surveys, like the European Social Survey or the World Values Survey, provide researchers with unique opportunities to test their theories and hypothesis in diverse populations around the world. However, this availability of data is only very seldomly accompanied by the realization that the assumption of comparability of the survey instruments should not be given but tested instead. Before attributing any relevant differences between populations to substantial theoretical reasons, methodological and measurement causes should be explicitly ruled out by testing for measurement invariance. This workshop will introduce participants to the basics of measurement invariance testing with many groups. We will start by explaining what is measurement invariance and the major causes for measurement non-equivalence in surveys. Then we will proceed to discuss the three most common approaches to measurement invariance testing and end with a simple tutorial on how to test for measurement invariance with Multi-Group Confirmatory Factor Analysis (MG-CFA) using R environment.
 
 \begin{quote}
-Here putting an example without correction
+This workshop is designed to be introductory and therefore I invite readers to follow the cited literature throughout this document and engage in further readings.
 \end{quote}
 
-Might there be other not substantive explanations for these results?
+\textbf{Workshop Content}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \protect\hyperlink{intro}{Introduction}\\
+\item
+  \protect\hyperlink{comp}{Comparative Survey Research}
+\item
+  \protect\hyperlink{invariance}{Measurement Invariance}
+\item
+  \protect\hyperlink{check}{Checklist for Measurement Invariance with MG-CFA}
+\item
+  \protect\hyperlink{lavaan}{Testing for measurement invariance with lavaan in R}
+\item
+  \protect\hyperlink{home}{Take-Home Message}
+\item
+  \protect\hyperlink{further}{Further Reading}
+\item
+  \protect\hyperlink{ref}{References}
+\end{enumerate}
+
+\hypertarget{work-in-progress}{%
+\section{Work in Progress}\label{work-in-progress}}
+
+This document is also a work in progress. New versions with more resources and information should be completed soon. Check my website to keep up with the progress \href{https://andrepirralha.com}{www.andrepirralha.com}
+
+\hypertarget{comp}{%
+\chapter{Comparative survey research}\label{comp}}
+
+Cross-national and cross-cultural comparative surveys are a very important resource for the Social Sciences. According to the \href{https://www.gesis.org/angebot/daten-analysieren/weitere-sekundaerdaten/uebersichten/overview-of-comparative-surveys-worldwide}{Overview of Comparative Surveys Worldwide}, more than 90 cross-national comparative surveys have been conducted around the world since 1948.
+
+Even though surveys can aim to fulfill different purposes, generally they aim to estimate population means, totals or distributions or relationships between variables. A comparative survey will aim to compare these levels or relationships across groups (national or otherwise).
+
+\textbackslash begin\{figure\}
+\includegraphics[width=0.8\linewidth]{bar_graph} \textbackslash caption\{Comparative percentages by country regarding immigration tolerance, from the European Social Survey Round 7. Source: \href{https://dimiter.eu/Visualizations_files/ESS/Visualizing_ESS_data.html\#saving_the_visualization}{Dimiter Toshkov 2020}\}\label{fig:bar}
+\textbackslash end\{figure\}
+
+Figure 2.1 shows a rather common application of a comparative survey. The groups, in this case European countries, are compared on their percentage shares on the answer to the question about allowing more immigrants.
+
+However, what we see in this graph is only the final abstraction of very long process that typically surveys, and most particularly cross-national surveys, must go through. This process is sometimes called survey lifecycle and goes from design to dissemination.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{lifecycle} \caption{Survey Lifecycle. Source: [Cross Cultural Survey Guidelines](https://ccsg.isr.umich.edu/chapters)}\label{fig:cycle}
+\end{figure}
+
+\hypertarget{survey-error}{%
+\section{Survey Error}\label{survey-error}}
 
 \begin{quote}
-And here the example after correction
+\emph{Survey error is any error arising from the survey process that contributed to the deviation of an estimate from its true parameter values.} \citep{Biemer}
 \end{quote}
 
-Measurement error can affect both subjective and objective variables. For the latter, check \citet{alwin}
+But regardless of how much we can try to prevent it, survey errors in one form or another will always occur. And survey errors might affect the estimates and their comparability.
 
-But what causes errors?
+This applies both to when we compare data from different surveys and comparisons of sub-groups within the same survey.
+
+The comparability of survey measurements is an issue that should be thoughtfully considered before drawing substantive conclusions from comparative surveys.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{trump_pence} \caption{Slighty problematic survey question. Source: [badsurveyq](https://twitter.com/badsurveyq)}\label{fig:trump}
+\end{figure}
+
+Survey error can be classified in two components:
+
+\begin{quote}
+Random error is caused by any factors that randomly affect measurement of the variable
+\end{quote}
+
+\begin{quote}
+Systematic error is caused by any factors that systematically affect measurement of the variable
+\end{quote}
+
+Survey group comparability problems come from systematic error or ``Bias''\footnote{systematic error and ``Bias'' are terms used interchangeably in the literature and they refer to deviations that are not due to chance alone.}.
+
+What is particular about comparative surveys is that there are at least two different survey statistics. Therefore, each one of these statistics is subject to different sources of error. If the overall statistics are differently affected by the error, this will cause some form of ``bias'' in the comparison.
+
+\begin{quote}
+In other words, besides substantive differences between survey statistics, there might be systematic differences caused by survey error.
+\end{quote}
 
 \hypertarget{total-survey-error-framework}{%
 \section{Total Survey Error framework}\label{total-survey-error-framework}}
 
-Errors across groups come from systematic error or ``bias''.
+\begin{quote}
+Total survey error is the accumulation of all errors that may arise in the design, collection, processing and analysis of survey data.
+\end{quote}
 
-A very useful way to understand what is error where it comes from is the Total Survey Error framewok
+The Total Survey Error offers an elegant framework to describe survey errors and the several sources of error that are rooted within the survey lifecycle.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{total_survey_error} \caption{Source: [@Groves&Lyberg2010](https://doi.org/10.1093/poq/nfq065)}\label{fig:ext}
+\includegraphics[width=0.8\linewidth]{total_survey_error} \caption{Source: @Groves2010}\label{fig:ext}
 \end{figure}
 
-The figure shows the survey process and the eventual sources of error.
-
-\begin{quote}
-The errors may be random or systematic
-\end{quote}
-
-In addition to substantial differences, different surveys are subject to differences sources of error.
-
-\begin{quote}
-Differences in systematic total survey error must then be reduced to 0 or kept equal across the groups we want to compare.
-\end{quote}
-
-A closer look to the \ref{ext} we can see a very simple distinction between Measurement and Representation. Both of these refer to goal of the survey to obtain the data as close to the ``true'' values as possible.
+As it can be seen in figure 2.4, there is a ``representation'' and a ``measurement'' side.
 
 Systematic representation errors include:
-- coverage error
-- sampling error
-- nonresponse
+
+\begin{itemize}
+\tightlist
+\item
+  coverage error
+\item
+  sampling error
+\item
+  nonresponse
+\end{itemize}
 
 Systematic error in measurement include:
-- validity
-- processing
-- measurement error
+
+\begin{itemize}
+\tightlist
+\item
+  validity
+\item
+  processing
+\item
+  measurement error
+\end{itemize}
 
 Measurement error includes: response error, interviewer-induced response effects, social desirability, methods effects, response styles.
 
@@ -229,22 +225,17 @@ Measurement error includes: response error, interviewer-induced response effects
 Here we will focus on the Measurement side
 \end{quote}
 
-\hypertarget{bias-framework}{%
-\section{Bias framework}\label{bias-framework}}
+\hypertarget{the-bias-framework}{%
+\section{The ``Bias'' framework}\label{the-bias-framework}}
 
-The classification of TSE is a close match to the Bias framework in the field of cross-cultural psychology.
-
-In the field of cross‐cultural psychology Van de Vijver \& Leung (1997) distinguished ``construct'', ``item'', and ``method'' bias.
+The TSE error classification is analogous to the \textbf{``Bias''} framework in the field of cross-cultural psychology. Under this framework, \citet{VandeVijver1997} distinguished between ``construct'', ``item'', and ``method'' bias which are essencially similar to the TSE's validity, measurement error and all the remaining errors.
 
 \begin{quote}
-The bias framework is developed from the perspective of cross-cultural psychology and attempts to provide a comprehensive taxonomy of all systematic sources of error that can challenge the inferences drawn from cross-cultural studies (van de Vijver \& Leung, 1997, 2000; van de Vijver \& Poortinga, 1997; van de Vijver \& Tanzer, 2004).
+The bias framework is developed from the perspective of cross-cultural psychology and attempts to provide a comprehensive taxonomy of all systematic sources of error that can challenge the inferences drawn from cross-cultural studies \citep{VandeVijver1997, VandeVijver2000, VandeVijver1997a, VandeVijver2004}.
 \end{quote}
 
-\hypertarget{three-types-of-bias-can-be-distinguished}{%
-\subsection{Three types of bias can be distinguished}\label{three-types-of-bias-can-be-distinguished}}
-
 \hypertarget{construct-bias}{%
-\subsubsection{Construct Bias}\label{construct-bias}}
+\subsection{Construct Bias}\label{construct-bias}}
 
 Construct bias is present if the underlying construct measured is not the same across cultures.
 
@@ -257,135 +248,127 @@ Construct bias is present if the underlying construct measured is not the same a
 Example:
 
 \begin{quote}
-Varying definitions of happiness in Western and East Asian cultures (Uchida, Norasakkunkit, \& Kitayama, 2004). In Western cultures, happiness tends to be defined in terms of individual achievement, whereas in East Asian cultures happiness is defined in terms of interpersonal connectedness.
+Varying definitions of happiness in Western and East Asian cultures \citep{Uchida2004}. In Western cultures, happiness tends to be defined in terms of individual achievement, whereas in East Asian cultures happiness is defined in terms of interpersonal connectedness.
 \end{quote}
 
 \hypertarget{method-bias}{%
-\subsubsection{Method Bias}\label{method-bias}}
+\subsection{Method Bias}\label{method-bias}}
 
 \begin{itemize}
 \item
   Sample Bias: is the incomparability of samples due to cross-cultural variations in characteristics, such as different educational levels, students versus the general population, and urban versus rural residents
 \item
-  Instrument bias: involves systematic errors derived from instrument characteristics such as self-report bias in Likert-type scale measures. The systematic tendency of respondents to endorse certain response options on some basis other than the target construct (i.e., response styles) may affect the validity of cross- cultural comparisons (van Herk, Poortinga, \& Verhallen, 2004).
+  Instrument bias: involves systematic errors derived from instrument characteristics such as self-report bias in Likert-type scale measures. The systematic tendency of respondents to endorse certain response options on some basis other than the target construct (i.e., response styles) may affect the validity of cross- cultural comparisons \citep{VanHerk2004}.
 \item
   Administration Bias: stems from administration conditions (e.g., data collection modes, group versus individual assessment), ambiguous instructions, interaction between administrators and respondents (e.g., halo effects), and communication problems (e.g., language differences, taboo topic).
 \end{itemize}
 
 \hypertarget{item-bias}{%
-\subsubsection{Item Bias}\label{item-bias}}
+\subsection{Item Bias}\label{item-bias}}
 
 \begin{itemize}
 \item
-  Occurs when an item has a different meaning across cultures. An item of a scale is biased if persons with the same target trait level, but coming from different cultures, are not equally likely to endorse the item (van de Vijver \& Leung, 1997; van de Vijver, 2013).
+  Occurs when an item has a different meaning across cultures. An item of a scale is biased if persons with the same target trait level, but coming from different cultures, are not equally likely to endorse the item (\citet{VandeVijver1997}; \citet{VandeVijver2013}).
 \item
   Item bias can arise from poor translation, inapplicability of item contents in different cultures, or from items that trigger additional traits or have words with ambiguous connotations.
 \end{itemize}
 
-\hypertarget{preventing-comparability-problems-in-survey-research}{%
-\chapter{Preventing comparability problems in survey research}\label{preventing-comparability-problems-in-survey-research}}
+\hypertarget{preventing-survey-comparability-problems}{%
+\section{Preventing survey comparability problems}\label{preventing-survey-comparability-problems}}
 
-Here is a review of existing methods.
+Following the TSE framework, the best way to reduce eventual comparability issues in survey data is to reduce the survey error to the very minimum and assuring that the persistent errors are most likely similar across the groups.
 
-\hypertarget{measurement-invariance}{%
-\chapter{Measurement Invariance}\label{measurement-invariance}}
+There is a vast literature discussing how to reduce TSE. However, two issues are particularly relevant to cross-cultural/national surveys.
 
-The measurement invariance framework addresses the statistical implications of the bias framework and defines conditions that have to be fulfilled before inferences can be drawn about comparative conclusions dealing with constructs or scores in cross-cultural studies.
+\hypertarget{translation}{%
+\subsection{Translation}\label{translation}}
+
+TRAPD - Translation, Review, Adjudication, Pretesting, and Documentation
+
+This method was proposed by \citet{Harkness2003}
+
+Team approach to survey translation:
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{T}ranslators produce, independently from each other, initial translations
+\end{itemize}
+\end{quote}
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R}eviewers review translations with the translators
+\end{itemize}
+\end{quote}
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{A}djudicator (one or more) decides whether the translation is ready
+\end{itemize}
+\end{quote}
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{P}retesting is the next step before going out to the field
+\end{itemize}
+\end{quote}
+
+\begin{quote}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{D}ocumentation should be constant during the entire process
+\end{itemize}
+\end{quote}
+
+\hypertarget{question-coding-system-sqp}{%
+\subsection{Question coding system: SQP}\label{question-coding-system-sqp}}
+
+It offers an additional way to check question comparability by taking into account the different characteristics of the questions in the original and adapted versions.
+
+\begin{quote}
+\url{https://sqp.upf.edu/}
+\end{quote}
+
+\hypertarget{invariance}{%
+\chapter{Measurement Invariance}\label{invariance}}
+
+Measurement invariance addresses some of the statistical implications of the TSE and ``Bias'' frameworks and defines conditions that have to be fulfilled before inferences can be drawn about comparative conclusions dealing with constructs or scores in cross-national/cultural studies.
 
 \begin{itemize}
 \item
-  Comparisons can only be made if the people in the different countries/cultures react similarly about the questions asked.
+  Comparisons can only be made if the people in the different countries/cultures react similarly to the questions asked.
 \item
-  The measures should be ``functionally equivalent'' / the response models should be invariant across countries
+  The measures should be ``functionally equivalent'' and the response models should be invariant across countries
 \end{itemize}
+
+\hypertarget{what-it-measurement-invariance}{%
+\section{What it Measurement Invariance?}\label{what-it-measurement-invariance}}
 
 Formal definition of invariance:
 
 \begin{quote}
-``whether or not, under different conditions of observing and studying phenomena, measurement operations yield measures of the same attribute'' (Horn \& McArdle, 1992, p.~117).
+``whether or not, under different conditions of observing and studying phenomena, measurement operations yield measures of the same attribute'' \citep[p.~117]{Horn1992}.
 \end{quote}
 
-\hypertarget{invariance-levels}{%
-\section{Invariance Levels}\label{invariance-levels}}
+What implies?
 
-Most research focus on 3 levels of invariance (some authors consider there are actually more\ldots)
+\begin{quote}
+Measurement invariance implies that using the same questionnaire in different groups (such as countries or at various points in time, or under different conditions) does measure the same construct in the same way \citep{Chen2008, Davidov2014, Horn1992, Millsap2011}.
+\end{quote}
 
-\begin{itemize}
-\item
-  Configural Invariance (structural equivalence): model holds for all the groups
-\item
-  Metric Invariance (measurement unit equivalence): besides configural invariance, the slopes are the same in all the countries studied
-\item
-  Scalar Invariance (Full score equivalence): besides metric invariance, the intercepts are the same across all countries being compared.
-\end{itemize}
+\hypertarget{how-to-test-for-it}{%
+\section{How to test for it?}\label{how-to-test-for-it}}
 
-\hypertarget{graphing-measurement-invariance}{%
-\subsection{Graphing Measurement invariance}\label{graphing-measurement-invariance}}
-
-\hypertarget{response-function}{%
-\subsubsection{Response Function}\label{response-function}}
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{response_function} \caption{Source: Adapted from Wicherts & Dolan}\label{fig:response}
-\end{figure}
-
-\hypertarget{metric-invariance}{%
-\subsubsection{Metric Invariance}\label{metric-invariance}}
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{Picture1} \caption{Source: Wicherts & Dolan, 2010}\label{fig:metric}
-\end{figure}
-
-\hypertarget{non-invariance}{%
-\subsubsection{Non Invariance}\label{non-invariance}}
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{Picture2} \caption{Source: Wicherts & Dolan, 2010}\label{fig:non}
-\end{figure}
-
-\hypertarget{metric-scalar-invariance}{%
-\subsubsection{Metric \& Scalar Invariance}\label{metric-scalar-invariance}}
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{metric_scalar} \caption{Source: Wicherts & Dolan, 2010}(\#fig:metric&scalar)
-\end{figure}
-
-\hypertarget{levels-of-invariance}{%
-\section{Levels of Invariance}\label{levels-of-invariance}}
-
-\begin{longtable}[]{@{}lrr@{}}
-\toprule
-Level of Invariance & Definition & Implication for group comparisons\tabularnewline
-\midrule
-\endhead
-Configural & Same measurement model & Baseline model\tabularnewline
-Metric & Identical factor loadings & relationships / correlations\tabularnewline
-Scalar & Small intercept differences & Latent factor means\tabularnewline
-\bottomrule
-\end{longtable}
-
-\hypertarget{how-to-test-for-measurement-invariance}{%
-\section{How to test for measurement invariance?}\label{how-to-test-for-measurement-invariance}}
-
-Factor Analysis
-
-\begin{itemize}
-\item
-  Exploratory factor analysis (EFA) and comparing the structures across group (configuration of relations between construct and observed indicators)
-\item
-  Confirmatory factor analysis (CFA) and testing the invariance of the parameters = several steps(complete invariance of all is not always needed!)
-\end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\hypertarget{exploratory-factor-analysis}{%
-\subsection{Exploratory Factor Analysis}\label{exploratory-factor-analysis}}
-
-Exploratory factor analysis (EFA) is a multivariate statistical technique to model the covariance structure of the observed variables by three sets of parameters: (a) factor loadings associated with latent (i.e., unobserved) variables called factors, (b) residual variances called unique variances, and (c) factor correlations. EFA aims at explaining the relationship of many observed variables by a relatively small number of factors.
-
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{expfactanal} \caption{Source: Wicherts & Dolan, 2010}\label{fig:factor}
-\end{figure}
+The most common method to test measurement invariance is Multi-Group Confirmatory Factor Analysis (MGCFA).
 
 \hypertarget{confirmatory-factor-analysis}{%
 \subsection{Confirmatory Factor Analysis}\label{confirmatory-factor-analysis}}
@@ -396,16 +379,14 @@ CFA focuses on modeling the relationship between manifest (i.e., observed) indic
 \includegraphics[width=0.8\linewidth]{confactor} \caption{Source: Wicherts & Dolan, 2010}\label{fig:cfa}
 \end{figure}
 
-For more information about confirmatory factor analysis see: \href{https://www.guilford.com/books/Confirmatory-Factor-Analysis-for-Applied-Research/Timothy-Brown/9781462515363}{Brown, T. A., Confirmatory Factor Analysis for Applied Research, Guilford Press}
+For more information about confirmatory factor analysis see \citet{Brown2015}.
 
 \hypertarget{multi-group-confirmatory-factor-analysis---mgcfa}{%
-\section{Multi-Group Confirmatory Factor Analysis - MGCFA}\label{multi-group-confirmatory-factor-analysis---mgcfa}}
+\subsection{Multi-Group Confirmatory Factor Analysis - MGCFA}\label{multi-group-confirmatory-factor-analysis---mgcfa}}
 
 \begin{itemize}
 \item
-  We can test whether a theoretical model fits several groups simultaneously
-\item
-  With a single model, we see how well it fits the data from all groups
+  With a single model tests whether a theoretical model fits several groups simultaneously
 \item
   How? Because we constrain parameters to be equal across groups
 \item
@@ -418,11 +399,114 @@ For more information about confirmatory factor analysis see: \href{https://www.g
 \includegraphics[width=0.8\linewidth]{multi_group} \caption{Source: Wicherts & Dolan, 2010}\label{fig:mgcfa}
 \end{figure}
 
-\hypertarget{alternative-measurement-invariance-testing-approaches-for-many-groups}{%
-\chapter{Alternative measurement invariance testing approaches for many groups}\label{alternative-measurement-invariance-testing-approaches-for-many-groups}}
+\hypertarget{invariance-testing-levels}{%
+\section{Invariance Testing Levels}\label{invariance-testing-levels}}
+
+Most research focus on 3 levels of measurement invariance:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Configural Invariance (structural equivalence): the same model holds for all the groups
+\item
+  Metric Invariance (measurement unit equivalence): factor loadings (slopes) are the same across the groups
+\end{enumerate}
+
+\begin{quote}
+Implication: The scale intervals are the same across groups because the loadings are the same in each group. When checked, allows comparing unstandardized regression coefﬁcients and/or covariances across groups.
+\end{quote}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Scalar Invariance (Full score equivalence): the intercepts are the same across all countries being compared.
+\end{enumerate}
+
+\begin{quote}
+Implication: Latent means can be compared across groups meaningfully.
+\end{quote}
+
+Following a bottom-up approach, each level is tested by setting cross-group constraints on parameters (loadings and intercepts) and comparing hierarchically more constrained models with less constrained ones.
+
+At the configural level, loadings and intercepts are freely estimated.
+
+At the metric level, loadings are constrained to be equal across groups and the intercepts are freely estimated.
+
+The scalar invariance model is the most constrained, with both loadings and intercepts constrained to be equal across groups.
+
+\hypertarget{response-function}{%
+\subsection{Response Function}\label{response-function}}
+
+The process by which a respondent arrives at an answer, that is the relationship between the respondent's ``opinion'' and the final answer, is called the response function. Figure 3.3 illustrates a possible response function
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{response_function} \caption{Illustration of a Response Function. Source: Adapted from Wicherts & Dolan}\label{fig:response}
+\end{figure}
+
+The \emph{X} axis represents the latent variable mean; the \emph{Y} axis represents the response to a survey question item measuring the latent variable. The diagonal represents the functional relation between the latent variable and the (unstandardized) response to the survey question item in group G1.
+
+\begin{quote}
+Another way to thing about invariance testing is as a procedure to check whether the response functions across different groups are similar and can therefore be compared.
+\end{quote}
+
+\hypertarget{example}{%
+\subsubsection{Example}\label{example}}
+
+Let's imagine we have two groups. These groups are respondents answering the same survey questions in two different countries: Group 1 and Group 2.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{Picture2} \caption{Source: Wicherts & Dolan, 2010}\label{fig:non}
+\end{figure}
+
+Figure 3.4 describes a configural invariance scenario. Both the factor loadings and intercepts are different across the groups, as is made clear by the different slopes and Y axis intersections for G1 and G2. Therefore, metric and scalar invariance do not hold in these groups and shouldn't be compared.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{Picture1} \caption{Source: Wicherts & Dolan, 2010}\label{fig:metric}
+\end{figure}
+
+Figure 3.5 describes metric invariance and scalar \textbf{non}invariance. The slopes are identical and therefore we can assume the factor loadings are the same across the groups.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{metric_scalar} \caption{Source: Wicherts & Dolan, 2010}\label{fig:metandscalar}
+\end{figure}
+
+Finally, figure 3.6 shows that the loadings are the same across the groups (similar slopes) and that the intercepts are approximately also the same.
+
+\hypertarget{how-to-handle-noninvariance}{%
+\section{How to handle Noninvariance}\label{how-to-handle-noninvariance}}
+
+It is not uncommon to have noninvariance across groups. The literature shows several examples of scales that fail to be comparable across groups. Some examples:
+
+\begin{quote}
+\citet{Aleman2016} and \citet{SOKOLOV2018} recently showed that the Inglehart value scales are not comparable across all countries (but see \citet{Welzel2016}); \citet{Ariely2011} found that public support for democracy cannot be compared across countries in the World Value Survey (WVS); \citet{Lomazzi2017} demonstrated that gender-role attitudes are not comparable across all WVS countries; \citet{Davidov2008} showed that means of human values in the ESS may not be compared across all countries; \citet{Rudnev2018} found that the means of Seeman's alienation scale are not comparable cross-nationally.
+\end{quote}
+
+Several theoretical and more technical procedures have been discussed to overcome a potential noninvariant result.
+
+Figure 3.7 compiles a great part of this discussion and can be used as a decision tree when necessary.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{decision_tree} \caption{Source: Wicherts & Dolan, 2010}\label{fig:tree}
+\end{figure}
+
+\hypertarget{partial-invariance-testing}{%
+\subsection{Partial Invariance Testing}\label{partial-invariance-testing}}
+
+Some authors consider that partial invariance is enough of a requisite for comparisons across groups to be made \citep{Byrne1989a, Steenkamp1998}.
+
+Partial invariance is established when the parameters of at least two indicators are equal across groups.
+
+This means to identify those items that are very different across groups and release them while making sure that at least two items per latent concept have equal loadings and intercepts.
+
+While this approach has been frequently used, there are also some critics that see it as not enough to assure meaningful comparisons \citep{DeBeuckelaer2011, Steinmetz2018EstimationAC}.
+
+\hypertarget{alternative-measurement-invariance-testing-procedures}{%
+\subsection{Alternative Measurement Invariance Testing procedures}\label{alternative-measurement-invariance-testing-procedures}}
 
 \hypertarget{exact-invariance-testing-alternative-approaches-to-mgcfa}{%
-\subsection{Exact Invariance testing alternative approaches to MGCFA}\label{exact-invariance-testing-alternative-approaches-to-mgcfa}}
+\subsubsection{Exact Invariance testing alternative approaches to MGCFA}\label{exact-invariance-testing-alternative-approaches-to-mgcfa}}
 
 Multi-indicator Multiple Cause (MIMIC)
 
@@ -432,7 +516,7 @@ Multi-indicator Multiple Cause (MIMIC)
   MIMIC model permits both categorical and continuous individual difference variables (e.g., sex and age) but permits only a subset of the model parameters to vary as a function of these characteristic
 \end{itemize}
 
-See \href{https://journals.sagepub.com/doi/abs/10.1177/0013164411427395?journalCode=epma}{Kim et al., 2012}
+See \citep{Kim2012}
 
 Item Response Theory (IRT) Differential Item Functioning
 
@@ -442,15 +526,15 @@ Item Response Theory (IRT) Differential Item Functioning
   Aimed to categorical data
 \end{itemize}
 
-See \href{https://journals.sagepub.com/doi/10.1177/1094428114553062}{Tay et al., 2014}
+See \citep{Tay2015}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{aproximate-invariance-a-conceptually-different-approach}{%
-\subsection{Aproximate Invariance: a conceptually different approach}\label{aproximate-invariance-a-conceptually-different-approach}}
+\hypertarget{approximate-invariance-a-conceptually-different-approach}{%
+\subsubsection{Approximate Invariance: a conceptually different approach}\label{approximate-invariance-a-conceptually-different-approach}}
 
 It is argued that a general measurement model using a CFA applies overly restrictive assumptions
-that represent a theory-driven model (Brown, 2006, 2015; Marsh et al., 2012). Assumptions include that each measure loads on only one factor (e.g., assuming the absence of cross-loadings and residual correlations), the absence of effects from covariates, and the assumption of an exact invariant of the measures in MGCFA.
+that represent a theory-driven model \citep{Brown2015, Marsh2013}. Assumptions include that each measure loads on only one factor (e.g., assuming the absence of cross-loadings and residual correlations), the absence of effects from covariates, and the assumption of an exact invariant of the measures in MGCFA.
 
 \begin{itemize}
 \tightlist
@@ -462,27 +546,26 @@ that represent a theory-driven model (Brown, 2006, 2015; Marsh et al., 2012). As
 \includegraphics[width=0.8\linewidth]{approximate} \caption{Source: Wicherts & Dolan, 2010}\label{fig:approximate}
 \end{figure}
 
-Source \href{https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118884997.ch40}{Desa et al., 2018}
+Source \citep{Desa2018}
+
+Approximate Invariance techniques:
 
 \begin{itemize}
 \item
-  Alignment invariance \href{https://doi.org/10.1177/0049124117701488}{(Muthén \& Asparouhov, 2017)}
+  Alignment invariance \citep{Muthen2018}
 \item
-  Bayesian SEM \href{https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118884997.ch41}{(Lek et al.,2018)}
+  Bayesian SEM \citep{Lek2018}
 \item
-  Mixture Models \href{https://www.researchgate.net/publication/338051963_Mixture_multigroup_factor_analysis_for_unraveling_factor_loading_non-_invariance_across_many_groups}{(Roover et al., 2019)}
+  Mixture Models \citep{DeRoover2019}
 \end{itemize}
 
-\hypertarget{tutorial}{%
-\chapter{Tutorial}\label{tutorial}}
+\hypertarget{check}{%
+\chapter{Checklist for Measurement Invariance with MGCFA}\label{check}}
 
-Measurement invariance tutorial in R
-
-\hypertarget{checklist-for-measurement-invariance-with-mgcfa}{%
-\section{Checklist for measurement invariance with MGCFA}\label{checklist-for-measurement-invariance-with-mgcfa}}
+In this section we describe the necessary steps for invariance testing.
 
 \hypertarget{start-by-having-a-model}{%
-\subsection{Start by having a model}\label{start-by-having-a-model}}
+\section{Start by having a model}\label{start-by-having-a-model}}
 
 \begin{itemize}
 \item
@@ -492,7 +575,7 @@ Measurement invariance tutorial in R
 \end{itemize}
 
 \hypertarget{test-the-configural-model}{%
-\subsection{Test the configural model}\label{test-the-configural-model}}
+\section{Test the configural model}\label{test-the-configural-model}}
 
 \begin{itemize}
 \item
@@ -507,7 +590,7 @@ There are two approaches of model identification: marker indicator or reference 
 \end{quote}
 
 \hypertarget{test-the-metric-model}{%
-\subsection{Test the metric model}\label{test-the-metric-model}}
+\section{Test the metric model}\label{test-the-metric-model}}
 
 \begin{itemize}
 \item
@@ -517,7 +600,7 @@ There are two approaches of model identification: marker indicator or reference 
 \end{itemize}
 
 \hypertarget{test-the-scalar-model}{%
-\subsection{Test the scalar model}\label{test-the-scalar-model}}
+\section{Test the scalar model}\label{test-the-scalar-model}}
 
 \begin{itemize}
 \item
@@ -526,19 +609,18 @@ There are two approaches of model identification: marker indicator or reference 
   Compare the model fit to the metric model
 \end{itemize}
 
-\hypertarget{got-non-invariance-it-happens-often.}{%
-\subsection{Got non-invariance? It happens often.}\label{got-non-invariance-it-happens-often.}}
+\hypertarget{got-noninvariance-it-happens-often.}{%
+\section{Got noninvariance? It happens often.}\label{got-noninvariance-it-happens-often.}}
 
-\begin{itemize}
-\item
-  Several options:
+Several options:
 
-  - exclude groups
+\begin{verbatim}
+	- exclude groups
+	
+	- remove items
 
-  - remove items
-
-  - distinguish several subgroups of countries
-\end{itemize}
+	- distinguish several subgroups of countries
+\end{verbatim}
 
 Still not getting invariance?
 
@@ -546,15 +628,13 @@ Still not getting invariance?
 Conclude that the construct has different meaning across groups
 \end{quote}
 
-\begin{figure}
-\includegraphics[width=0.8\linewidth]{decision_tree} \caption{Source: Wicherts & Dolan, 2010}\label{fig:tree}
-\end{figure}
+Consider alternative invariance testing procedures.
 
-\hypertarget{mgcfa-in-r}{%
-\section{MGCFA in R}\label{mgcfa-in-r}}
+\hypertarget{lavaan}{%
+\chapter{Testing for measurement invariance with lavaan in R}\label{lavaan}}
 
-\hypertarget{how-to-run-a-mgcfa-in-r-the-overly-simple-way}{%
-\subsection{How to Run a MGCFA in R (the overly simple way)}\label{how-to-run-a-mgcfa-in-r-the-overly-simple-way}}
+\hypertarget{how-to-run-a-mgcfa-in-r}{%
+\section{How to Run a MGCFA in R}\label{how-to-run-a-mgcfa-in-r}}
 
 Why R? Because it is free.
 
@@ -562,13 +642,13 @@ Alternatives:
 
 \begin{itemize}
 \item
-  Mplus
+  \href{https://www.statmodel.com/}{Mplus}
 \item
-  Lisrel
+  \href{https://ssicentral.com/index.php/products/lisrel/}{Lisrel}
 \end{itemize}
 
 \hypertarget{download-r-and-rstudio}{%
-\subsection{Download R and RStudio}\label{download-r-and-rstudio}}
+\section{Download R and RStudio}\label{download-r-and-rstudio}}
 
 \begin{itemize}
 \tightlist
@@ -579,7 +659,7 @@ Alternatives:
 \end{itemize}
 
 \hypertarget{install-lavaan-and-semtools}{%
-\subsection{Install Lavaan and SemTools}\label{install-lavaan-and-semtools}}
+\section{Install Lavaan and SemTools}\label{install-lavaan-and-semtools}}
 
 \begin{itemize}
 \tightlist
@@ -590,7 +670,7 @@ Alternatives:
 \end{itemize}
 
 \hypertarget{data-cleaning}{%
-\subsection{Data cleaning}\label{data-cleaning}}
+\section{Data cleaning}\label{data-cleaning}}
 
 \begin{itemize}
 \item
@@ -600,162 +680,19 @@ Alternatives:
 \end{itemize}
 
 \hypertarget{use-lavaan-language-to-formalize-the-model}{%
-\subsection{Use Lavaan language to formalize the model}\label{use-lavaan-language-to-formalize-the-model}}
+\section{Use lavaan language to formalize the model}\label{use-lavaan-language-to-formalize-the-model}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{HS.model <-}\StringTok{ '  visual =~ x1 + x2 + x3}
-\StringTok{              textual =~ x4 + x5 + x6}
-\StringTok{              speed   =~ x7 + x8 + x9 '}
-\NormalTok{fit <-}\StringTok{ }\KeywordTok{cfa}\NormalTok{(HS.model, }
-           \DataTypeTok{data =}\NormalTok{ HolzingerSwineford1939, }
-           \DataTypeTok{group =} \StringTok{"school"}\NormalTok{,}
-           \DataTypeTok{group.equal =} \KeywordTok{c}\NormalTok{(}\StringTok{"loadings"}\NormalTok{))}
-\KeywordTok{summary}\NormalTok{(fit)}
-\end{Highlighting}
-\end{Shaded}
+The \href{https://lavaan.ugent.be/tutorial/}{lavaan tutorial} explains well how to formalize a theoretical model. It even includes a \href{https://lavaan.ugent.be/tutorial/groups.html}{measurement invariance testing example}.
 
-\begin{verbatim}
-lavaan (0.6-1) converged normally after  42 iterations
+In a nutshell:
 
-  Number of observations per group         
-  Pasteur                                          156
-  Grant-White                                      145
+Factor loadings in R are indicated by =∼ and covariances (between factors or error terms for items) are indicated by ∼∼. The model is specified similar to writing regression equations.
 
-  Estimator                                         ML
-  Model Fit Test Statistic                     124.044
-  Degrees of freedom                                54
-  P-value (Chi-square)                           0.000
-
-Chi-square for each group:
-
-  Pasteur                                       68.825
-  Grant-White                                   55.219
-
-Parameter Estimates:
-
-  Information                                 Expected
-  Information saturated (h1) model          Structured
-  Standard Errors                             Standard
-
-
-Group 1 [Pasteur]:
-
-Latent Variables:
-                   Estimate  Std.Err  z-value  P(>|z|)
-  visual =~                                           
-    x1                1.000                           
-    x2      (.p2.)    0.599    0.100    5.979    0.000
-    x3      (.p3.)    0.784    0.108    7.267    0.000
-  textual =~                                          
-    x4                1.000                           
-    x5      (.p5.)    1.083    0.067   16.049    0.000
-    x6      (.p6.)    0.912    0.058   15.785    0.000
-  speed =~                                            
-    x7                1.000                           
-    x8      (.p8.)    1.201    0.155    7.738    0.000
-    x9      (.p9.)    1.038    0.136    7.629    0.000
-
-Covariances:
-                   Estimate  Std.Err  z-value  P(>|z|)
-  visual ~~                                           
-    textual           0.416    0.097    4.271    0.000
-    speed             0.169    0.064    2.643    0.008
-  textual ~~                                          
-    speed             0.176    0.061    2.882    0.004
-
-Intercepts:
-                   Estimate  Std.Err  z-value  P(>|z|)
-   .x1                4.941    0.093   52.991    0.000
-   .x2                5.984    0.100   60.096    0.000
-   .x3                2.487    0.094   26.465    0.000
-   .x4                2.823    0.093   30.371    0.000
-   .x5                3.995    0.101   39.714    0.000
-   .x6                1.922    0.081   23.711    0.000
-   .x7                4.432    0.086   51.540    0.000
-   .x8                5.563    0.078   71.087    0.000
-   .x9                5.418    0.079   68.153    0.000
-    visual            0.000                           
-    textual           0.000                           
-    speed             0.000                           
-
-Variances:
-                   Estimate  Std.Err  z-value  P(>|z|)
-   .x1                0.551    0.137    4.010    0.000
-   .x2                1.258    0.155    8.117    0.000
-   .x3                0.882    0.128    6.884    0.000
-   .x4                0.434    0.070    6.238    0.000
-   .x5                0.508    0.082    6.229    0.000
-   .x6                0.266    0.050    5.294    0.000
-   .x7                0.849    0.114    7.468    0.000
-   .x8                0.515    0.095    5.409    0.000
-   .x9                0.658    0.096    6.865    0.000
-    visual            0.805    0.171    4.714    0.000
-    textual           0.913    0.137    6.651    0.000
-    speed             0.305    0.078    3.920    0.000
-
-
-Group 2 [Grant-White]:
-
-Latent Variables:
-                   Estimate  Std.Err  z-value  P(>|z|)
-  visual =~                                           
-    x1                1.000                           
-    x2      (.p2.)    0.599    0.100    5.979    0.000
-    x3      (.p3.)    0.784    0.108    7.267    0.000
-  textual =~                                          
-    x4                1.000                           
-    x5      (.p5.)    1.083    0.067   16.049    0.000
-    x6      (.p6.)    0.912    0.058   15.785    0.000
-  speed =~                                            
-    x7                1.000                           
-    x8      (.p8.)    1.201    0.155    7.738    0.000
-    x9      (.p9.)    1.038    0.136    7.629    0.000
-
-Covariances:
-                   Estimate  Std.Err  z-value  P(>|z|)
-  visual ~~                                           
-    textual           0.437    0.099    4.423    0.000
-    speed             0.314    0.079    3.958    0.000
-  textual ~~                                          
-    speed             0.226    0.072    3.144    0.002
-
-Intercepts:
-                   Estimate  Std.Err  z-value  P(>|z|)
-   .x1                4.930    0.097   50.763    0.000
-   .x2                6.200    0.091   68.379    0.000
-   .x3                1.996    0.085   23.455    0.000
-   .x4                3.317    0.092   35.950    0.000
-   .x5                4.712    0.100   47.173    0.000
-   .x6                2.469    0.091   27.248    0.000
-   .x7                3.921    0.086   45.555    0.000
-   .x8                5.488    0.087   63.257    0.000
-   .x9                5.327    0.085   62.786    0.000
-    visual            0.000                           
-    textual           0.000                           
-    speed             0.000                           
-
-Variances:
-                   Estimate  Std.Err  z-value  P(>|z|)
-   .x1                0.645    0.127    5.084    0.000
-   .x2                0.933    0.121    7.732    0.000
-   .x3                0.605    0.096    6.282    0.000
-   .x4                0.329    0.062    5.279    0.000
-   .x5                0.384    0.073    5.270    0.000
-   .x6                0.437    0.067    6.576    0.000
-   .x7                0.599    0.090    6.651    0.000
-   .x8                0.406    0.089    4.541    0.000
-   .x9                0.532    0.086    6.202    0.000
-    visual            0.722    0.161    4.490    0.000
-    textual           0.906    0.136    6.646    0.000
-    speed             0.475    0.109    4.347    0.000
-
-\end{verbatim}
-
-Check out the \href{https://lavaan.ugent.be/tutorial/before.html}{lavaan tutorial}
+\hypertarget{example}{%
+\subsection{Example}\label{example}}
 
 \hypertarget{useful-shortcut-measurement-invariance-omnibus-testing}{%
-\subsection{Useful shortcut: measurement invariance omnibus testing}\label{useful-shortcut-measurement-invariance-omnibus-testing}}
+\section{Useful shortcut: measurement invariance omnibus testing}\label{useful-shortcut-measurement-invariance-omnibus-testing}}
 
 \begin{verbatim}
 measurementInvariance(HS.model, 
@@ -793,8 +730,11 @@ fit.means      0.840 0.122     0.042       0.015
 
 Terry Jorgensen \href{https://www.rdocumentation.org/packages/semTools/versions/0.4-14/topics/measurementInvariance}{measurementInvariance function}, within the semTools package is very handy
 
-\hypertarget{conclusions}{%
-\chapter{Conclusions}\label{conclusions}}
+\hypertarget{advanced-tutorial-partial-invariance-individually-constraining-parameters}{%
+\section{Advanced Tutorial: Partial Invariance (individually constraining parameters)}\label{advanced-tutorial-partial-invariance-individually-constraining-parameters}}
+
+\hypertarget{home}{%
+\chapter{Take-Home Message}\label{home}}
 
 \begin{itemize}
 \item
@@ -804,7 +744,7 @@ Terry Jorgensen \href{https://www.rdocumentation.org/packages/semTools/versions/
 \item
   Adapt the measurement testing procedure to the model you want to test
 \item
-  Don't just think about measurement invariance when you get the data:
+  Don't think about measurement invariance only when you get the data:
 \end{itemize}
 
 \begin{quote}
@@ -817,17 +757,15 @@ Terry Jorgensen \href{https://www.rdocumentation.org/packages/semTools/versions/
 \item
   Compare distributions and look for substantial deviations of the equality constraints over groups for slopes (factor loadings) and intercepts
 \item
-  Equivalente loadings (metric invariance) necessary for correlations, regressions
+  Equivalent loadings (metric invariance) necessary for correlations, regressions
 \item
-  Equivalente intercepts (scalar invariance) necessary for comparing latent means
+  Equivalent intercepts (scalar invariance) necessary for comparing latent means
 \item
   Comparing means and relationships between latent variables across countries does not have to require perfect invariance.
-\item
-  Using latent variables is a more flexible approach than employing composite scores.
 \end{itemize}
 
-\hypertarget{further-reading}{%
-\chapter{Further Reading}\label{further-reading}}
+\hypertarget{further}{%
+\chapter{Further Reading}\label{further}}
 
 \hypertarget{critical-issues-of-mgcfa-measurement-invariance}{%
 \section{Critical Issues of MGCFA Measurement invariance}\label{critical-issues-of-mgcfa-measurement-invariance}}
@@ -845,21 +783,26 @@ Quality of the model is the similarity of estimated parameters to the true popul
 
 Two testing approaches
 
-\begin{itemize}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Global Fit indices: The most popular global fit measure is the χ2 test, but there are also many other fit indices that have been developed, such as the root mean squared error of approximation (RMSEA) or the comparative fit index (CFI). \href{https://www.tandfonline.com/doi/abs/10.1080/10705510701301834}{Chen (2007)} proposes that a change of larger than 0.01 in CFI is an indication of nonequivalence.
-\end{itemize}
+  Global Fit indices: The most popular global fit measure is the χ2 test but it was shown to be problematic.
+\end{enumerate}
 
 \begin{quote}
-Most commonly used: chi-square, CFI, TLI, RMSEA, SRMR (all available by request in lavaan).
+(\ldots) a number of alternative fit measures have been proposed (even though most of them still are derived from the chi-square statistic). Here, we focus on the most commonly reported fit statistics (Hu and Bentler, 1999), which can be differentiated into (a) incremental or comparative and (b) lack-of-fit indices. Incremental or comparative fit models compare the fit of the theoretical model against an alternative model. This is (typically) an independence model in which no relationships between variables are expected. Higher values are indicating better fit with values above 0.95 indicating good fit (Hu and Bentler, 1998). The Tucker--Lewis Index (TLI) or non-normed fit index (NNFI) and the comparative fit index (CFI; Bentler, 1990) are the most commonly reported and more robust indicators (Hu and Bentler, 1999). Lack of fit indices in contrast indicate better fit, if the value is lower. The standardized root mean square residual (SRMR; Bollen, 1989) compares the discrepancy between the observed correlation matrix and the implied theoretical matrix. Smaller values indicate that there is less deviation. Hu and Bentler (1998) suggested that values less than 0.08 are acceptable. The root mean square error of approximation (RMSEA; Browne and Cudeck, 1992) uses a similar logic, but also takes into account model complexity and rewards more parsimonious models. Historically, values ranging between 0.06 and 0.08 were deemed acceptable, but simulations by Hu and Bentler (1998, 1999) suggested that a cut-off of 0.06 might be more appropriate. \citep{Fischer2019}
 \end{quote}
 
-\begin{itemize}
+Most commonly used: chi-square, CFI, TLI, RMSEA, SRMR (all available upon request in lavaan).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
 \tightlist
 \item
-  Local Fit indices: \href{https://www.tandfonline.com/doi/abs/10.1080/10705510903203433}{Saris et al.~(2009)} argue that global fit measures are never sufficient and that researchers should test the local fit of their models, that is, they should look at the parameter level and test if each of the parameters in the model is or not misspecified. Local fit testing tells whether there are misspecifications in the model using the modification indices (an estimate of the amount by which the χ2 would be reduced if a single parameter restriction was to be removed from the model), the power of the test (which is the complement of type II error, i.e., of wrongly failing to reject the null hypothesis), and when necessary the expected parameter changes (an approximation to the value of the parameter if it was not constrained).
-\end{itemize}
+  Local Fit indices: \citet{Saris2009} argue that global fit measures are never sufficient and that researchers should test the local fit of their models, that is, they should look at the parameter level and test if each of the parameters in the model is or not misspecified. Local fit testing tells whether there are misspecifications in the model using the modification indices (an estimate of the amount by which the χ2 would be reduced if a single parameter restriction was to be removed from the model), the power of the test (which is the complement of type II error, i.e., of wrongly failing to reject the null hypothesis), and when necessary the expected parameter changes (an approximation to the value of the parameter if it was not constrained).
+\end{enumerate}
 
 \begin{quote}
 Local fit testing: in R's semTools package \href{https://rdrr.io/cran/semTools/man/miPowerFit.html}{(miPowerFit)}; in Mplus \href{https://daob.nl/software/}{Jrule for Mplus}
@@ -887,25 +830,21 @@ Without correction for measurement errors, we run the risk of giving explanation
 \end{itemize}
 
 \begin{quote}
-Pirralha \& Weber (forthcoming) suggest to test on cognitive equivalence i.e.~invariance after correction for measurement errors.
+\citet{Pirralha2020} suggest to test on cognitive equivalence i.e.~invariance after correction for measurement errors.
 \end{quote}
 
 \begin{figure}
-\centering
-\includegraphics{corrected.tiff}
-\caption{Measurement invariance testing after correction for measurement error}
+\includegraphics[width=0.8\linewidth]{correctionmodel} \caption{Measurement invariance with correction for measurement error models. Source: @Pirralha2020}\label{fig:correction}
 \end{figure}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{sample-size-model-characteristics}{%
 \subsection{Sample size \& Model Characteristics}\label{sample-size-model-characteristics}}
 
 \begin{itemize}
 \item
-  Sample size cannot be too small.
+  Sample size cannot be too small (no rule of thumb here).
 \item
-  Number of items per scale is very important. Large simulation study by \href{https://www.tandfonline.com/doi/abs/10.1080/10705511.2018.1561293}{Pokropek, Davidov \& Schmidt (2019)} shows that model characteristics such as number of items per scale is at least as important as invariance testing procedure
+  Number of items per scale is very important. Large simulation study by \citet{Pokropek2019} shows that model characteristics such as number of items per scale is at least as important as invariance testing procedure
 \item
   Take into account the nature of the observed items (ordinal, continuous, nominal, dichotomous)
 \end{itemize}
@@ -915,7 +854,7 @@ Pirralha \& Weber (forthcoming) suggest to test on cognitive equivalence i.e.~in
 
 \begin{itemize}
 \item
-  Highly reccomended: listen to the \href{https://quantitudethepodcast.org/listen/}{Quantitude Podcast} episode 12
+  Highly recommended: listen to the \href{https://quantitudethepodcast.org/listen/}{Quantitude Podcast} \href{https://www.stitcher.com/podcast/quantitude/e/66905935}{episode 12}
 \item
   Measurement Invariance checklists and tutorials:
 
