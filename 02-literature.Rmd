@@ -127,7 +127,7 @@ Finally, figure 3.6 shows that the loadings are the same across the groups (simi
 
 It is not uncommon to have noninvariance across groups. The literature shows several examples of scales that fail to be comparable across groups. Some examples:
 
- > @Aleman2016 and @SOKOLOV2018 recently showed that the Inglehart value scales are not comparable across all countries (but see @Welzel2016); @Ariely2011 found that public support for democracy cannot be compared across countries in the World Value Survey (WVS); @Lomazzi2017 demonstrated that gender-role attitudes are not comparable across all WVS countries; @Davidov2008 showed that means of human values in the ESS may not be compared across all countries; @Rudnev2018 found that the means of Seeman’s alienation scale are not comparable cross-nationally.
+ > @Aleman2016 and @SOKOLOV2018 recently showed that the Inglehart value scales are not comparable across all countries (but see @Welzel2016); @Ariely2011 found that public support for democracy cannot be compared across countries in the World Value Survey (WVS); @Lomazzi2017 demonstrated that gender-role attitudes are not comparable across all WVS countries; @Davidov2008 showed that means of human values in the ESS may not be compared across all countries; @Rudnev2018 found that the means of Seeman’s alienation scale are not comparable cross-nationally. [@Cieciuch2019]
 
 Several theoretical and more technical procedures have been discussed to overcome a potential noninvariant result.
 
